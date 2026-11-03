@@ -98,7 +98,7 @@ class Single_LinkedList {
 		System.out.println("null");
 	}
 
-	// re
+	// reverse
 	public Node reverse() {
 		Node prev = null;
 		Node mid = null;
