@@ -15,7 +15,7 @@ class SingleLinkedList {
 		node.val = val;
 		node.next = null;
 		head = node;
-		tail=node;
+		tail = node;
 		size = 1;
 	}
 
@@ -28,40 +28,41 @@ class SingleLinkedList {
 			node.val = val;
 			node.next = null;
 			tail.next = node;
+			tail = node;
 		}
 		size++;
 	}
-	
-	public Node reverse(){
-		Node prev=null;
-		Node mid=null;
-		Node cn=head;
-		while(cn!=null) {
-			prev=mid;
-			mid=cn;
-			cn=cn.next;
-			mid.next=prev;
+
+	public Node reverse() {
+		Node prev = null;
+		Node mid = null;
+		Node cn = head;
+		while (cn != null) {
+			prev = mid;
+			mid = cn;
+			cn = cn.next;
+			mid.next = prev;
 		}
 		return mid;
-		
+
 	}
-	
+
 	public void bwdtraversal() {
-		Node temp=reverse();
-		while(temp!=null) {
-			System.out.print(temp.val+"->");
-			temp=temp.next;
+		Node temp = reverse();
+		while (temp != null) {
+			System.out.print(temp.val + "->");
+			temp = temp.next;
 		}
 		System.out.println("null");
 	}
 }
 
-public class Task1 {
+public class ReverseString {
 	public static void main(String[] args) {
-		SingleLinkedList sll=new SingleLinkedList();
-		String name="chethan";
-		char[] ch=name.toCharArray();
-		for(int i=0;i<ch.length;i++) {
+		SingleLinkedList sll = new SingleLinkedList();
+		String name = "chethan";
+		char[] ch = name.toCharArray();
+		for (int i = 0; i < ch.length; i++) {
 			sll.insert(ch[i]);
 		}
 		sll.bwdtraversal();
